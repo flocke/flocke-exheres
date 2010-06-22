@@ -7,7 +7,7 @@ SUMMARY="Google Data APIs Python Client Library"
 
 LICENCES="Apache-2.0"
 SLOT="0"
-PLATFORMS="~amd64"
+PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
 
 DEPENDENCIES=""
