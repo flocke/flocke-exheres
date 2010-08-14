@@ -1,7 +1,8 @@
 # Copyright 2010 Elias Pipping <pipping@exherbo.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require distutils [ python_dep=2.5 has_lib=true ] googlecode [ project=gdata-python-client suffix=tar.gz ]
+#require distutils [ python_dep=2.5 has_lib=true ] googlecode [ project=gdata-python-client suffix=tar.gz ]
+require distutils [ python_dep=2.5 has_lib=true ] googlecode [ project=gdata-python-client suffix=final.tar.gz ]
 
 SUMMARY="Google Data APIs Python Client Library"
 
