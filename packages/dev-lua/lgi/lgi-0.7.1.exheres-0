@@ -22,6 +22,8 @@ DEPENDENCIES="
         dev-libs/glib
         dev-libs/libffi
         gnome-desktop/gobject-introspection
+    test:
+        x11-libs/gtk+:*[gobject-introspection]
 "
 
 lua_version
