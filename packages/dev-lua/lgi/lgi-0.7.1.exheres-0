@@ -30,3 +30,7 @@ lua_version
 
 DEFAULT_SRC_COMPILE_PARAMS=( LUA_CFLAGS=-I/usr/include/lua${LUAVER} )
 DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr LUA_VERSION=${LUAVER} LUA_LIBDIR=${LIBDIR}/lua/${LUAVER} )
+
+src_test() {
+    echo "Tests want to access X11, skipping."
+}
