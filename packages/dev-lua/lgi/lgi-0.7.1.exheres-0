@@ -1,0 +1,25 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require lua flag-o-matic
+
+SUMMARY="Lua bindings for gnome/gobject using gobject-introspection library"
+
+HOMEPAGE="https://github.com/pavouk/lgi"
+DOWNLOADS="https://github.com/pavouk/lgi/archive/${PV}.tar.gz -> ${PNV}.tar.gz"
+BUGS_TO="flocke@shadowice.org"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd46"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-util/pkg-config
+    build+run:
+        dev-lang/lua[>=5.1]
+        dev-libs/glib
+        dev-libs/libffi
+        gnome-desktop/gobject-introspection
+"
