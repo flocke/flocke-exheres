@@ -29,8 +29,14 @@ DEPENDENCIES="
 lua_version
 
 DEFAULT_SRC_COMPILE_PARAMS=( LUA_CFLAGS=-I/usr/include/lua${LUAVER} )
-DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr LUA_VERSION=${LUAVER} LUA_LIBDIR=${LIBDIR}/lua/${LUAVER} )
+DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr LUA_VERSION=${LUAVER} LUA_LIBDIR=/usr/${LIBDIR}/lua/${LUAVER} )
 
-src_test() {
-    echo "Tests want to access X11, skipping."
+src_prepare() {
+    default
+
+    # disable some tests (they want to access the Xorg server -> access violation in sydbox)
+    sed -i \
+        -e "s|'gtk.lua',|--'gtk.lua',|" \
+        -e "s|'gobject.lua',|--'gobject.lua',|" \
+        tests/test.lua
 }
