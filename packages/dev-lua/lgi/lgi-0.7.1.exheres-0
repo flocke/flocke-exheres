@@ -1,8 +1,6 @@
 # Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require lua flag-o-matic
-
 SUMMARY="Lua bindings for gnome/gobject using gobject-introspection library"
 
 HOMEPAGE="https://github.com/pavouk/lgi"
@@ -24,7 +22,9 @@ DEPENDENCIES="
         gnome-desktop/gobject-introspection
 "
 
-lua_version
+# Which lua version is used ?
+local luaver="$(lua -v 2>&1| cut -d' ' -f2)"
+LUAVER="${luaver%.*}"
 
 DEFAULT_SRC_COMPILE_PARAMS=( LUA_CFLAGS=-I/usr/include/lua${LUAVER} )
 DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr LUA_VERSION=${LUAVER} LUA_LIBDIR=/usr/${LIBDIR}/lua/${LUAVER} )

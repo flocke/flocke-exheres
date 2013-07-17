@@ -1,8 +1,6 @@
 # Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require lua flag-o-matic
-
 SUMMARY="Lua libraries focusing on input data handling"
 HOMEPAGE="http://stevedonovan.github.io/Penlight/api/index.html"
 DOWNLOADS="https://github.com/stevedonovan/penlight/archive/${PV}.tar.gz -> ${PNV}.tar.gz"
@@ -20,9 +18,11 @@ DEPENDENCIES="
 
 BUGS_TO="flocke@shadowice.org"
 
-src_install() {
-    lua_version
+# Which lua version is used ?
+local luaver="$(lua -v 2>&1| cut -d' ' -f2)"
+LUAVER="${luaver%.*}"
 
+src_install() {
     insinto /usr/share/lua/${LUAVER}/pl
     doins lua/pl/*.lua
 
