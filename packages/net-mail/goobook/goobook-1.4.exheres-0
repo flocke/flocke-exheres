@@ -3,7 +3,5 @@
 
 require pypi goobook
 
-HOMEPAGE="https://code.google.com/p/${PN}/"
-
 PLATFORMS="~amd64"
 

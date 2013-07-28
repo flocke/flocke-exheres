@@ -5,6 +5,8 @@ require distutils [ python_dep=2.7 ]
 
 SUMMARY="Search your google contacts from the command-line or mutt."
 
+HOMEPAGE="https://code.google.com/p/${PN}/"
+
 LICENCES="GPL-3"
 SLOT="0"
 MYOPTIONS=""

@@ -5,7 +5,6 @@ SCM_REPOSITORY="git://gitorious.org/goobook/mainline.git"
 
 require scm-git goobook
 
-HOMEPAGE="https://code.google.com/p/${PN}/"
 REMOTE_IDS="pypi:${PN}"
 
 PLATFORMS="~amd64"
