@@ -1,0 +1,9 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi goobook
+
+HOMEPAGE="https://code.google.com/p/${PN}/"
+
+PLATFORMS="~amd64"
+

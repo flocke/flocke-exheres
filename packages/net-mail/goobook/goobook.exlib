@@ -1,0 +1,28 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require distutils [ python_dep=2.7 ]
+
+SUMMARY="Search your google contacts from the command-line or mutt."
+
+LICENCES="GPL-3"
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/setuptools
+        dev-python/gdata[>=2.0.7]
+        dev-python/hcs_utils[=1.1.1]
+        dev-python/keyring
+        dev-python/simplejson
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+src_prepare() {
+    default
+
+    # Remove extra dependency (is now part of dev-lang/python)
+    edo sed -i -e "/'argparse>=1.1',/d" setup.py
+}

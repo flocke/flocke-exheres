@@ -1,0 +1,12 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://gitorious.org/goobook/mainline.git"
+
+require scm-git goobook
+
+HOMEPAGE="https://code.google.com/p/${PN}/"
+REMOTE_IDS="pypi:${PN}"
+
+PLATFORMS="~amd64"
+
