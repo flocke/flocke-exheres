@@ -1,0 +1,38 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Script to convert many audio formats into the ogg-vorbis format."
+DESCRIPTION="
+    dir2ogg is a python script which converts APE, MP3, MP4, M4A, AAC, FLAC, MPC (Musepack), WMA,
+    ASF files and Audio-CDs into the ogg-vorbis format.
+"
+
+HOMEPAGE="http://jak-linux.org/projects/dir2ogg/"
+DOWNLOADS="http://jak-linux.org/projects/${PN}/$(ever range 1-2)/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-lang/python:2.7
+        dev-python/mutagen
+        media-sound/vorbis-tools
+    suggestion:
+        media-libs/mac-port [[ description = [ Used to decode APE (Monkey's Audio) files ] ]]
+        media-sound/mpg123 [[ description = [ Used to decode MP3 files ] ]]
+        media-sound/lame [[ description = [ Used to decode MP3 files ] ]]
+        media-libs/faad2 [[ description = [ Used to decode MP4/M4A/AAC files ] ]]
+        media-libs/flac [[ description = [ Used to decode FLAC files ] ]]
+        media/cdparanoia [[ description = [ Used to decode Audio-CDs ] ]]
+        media/mplayer [[ description = [ Used to decode many of the supported audio formats ] ]]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+src_install() {
+    dobin dir2ogg
+    doman dir2ogg.1
+}
