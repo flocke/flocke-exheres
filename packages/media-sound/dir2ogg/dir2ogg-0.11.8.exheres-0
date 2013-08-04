@@ -3,8 +3,8 @@
 
 SUMMARY="Script to convert many audio formats into the ogg-vorbis format."
 DESCRIPTION="
-    dir2ogg is a python script which converts APE, MP3, MP4, M4A, AAC, FLAC, MPC (Musepack), WMA,
-    ASF files and Audio-CDs into the ogg-vorbis format.
+dir2ogg is a python script which converts APE, MP3, MP4, M4A, AAC, FLAC, MPC (Musepack),
+WMA, ASF files and Audio-CDs into the ogg-vorbis format, including their tags.
 "
 
 HOMEPAGE="http://jak-linux.org/projects/dir2ogg/"

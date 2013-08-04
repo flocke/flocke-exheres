@@ -4,6 +4,10 @@
 require distutils [ python_dep=2.7 ]
 
 SUMMARY="Search your google contacts from the command-line or mutt."
+DESCRIPTION="
+A program which makes it possible to query your Google Contacts
+from the commandline or from within mutt, in a similar way as abook.
+"
 
 HOMEPAGE="https://code.google.com/p/${PN}/"
 

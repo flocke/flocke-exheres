@@ -2,6 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="Command line browser of KeePassX database files (*.kdb)"
+DESCRIPTION="
+A command line interface (interactive shell) to work with KeePass database files.
+Supports version 1.x and 2.x of the KeePass file format.
+"
 
 HOMEPAGE="http://kpcli.sourceforge.net/"
 BUGS_TO="flocke@shadowice.org"
