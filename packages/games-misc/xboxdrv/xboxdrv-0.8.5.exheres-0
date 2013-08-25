@@ -1,0 +1,41 @@
+# Copyright 2013 Jakob Nixdorf
+# Distributed under the terms of the GNU General Public License v2
+
+require scons
+
+MY_PNV="${PN}-linux-${PV}"
+
+SUMMARY="Userspace driver for the XBox 360 controller."
+HOMEPAGE="http://pingus.seul.org/~grumbel/xboxdrv/"
+DOWNLOADS="http://pingus.seul.org/~grumbel/xboxdrv/${MY_PNV}.tar.bz2"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-util/pkg-config
+    build+run:
+        dev-libs/boost
+        sys-apps/dbus
+        sys-apps/systemd
+        dev-libs/glib:2
+        dev-libs/libusb:1
+        x11-libs/libX11
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+WORK="${WORKBASE}/${MY_PNV}"
+
+src_install() {
+    emake -j1 DESTDIR="${IMAGE}" PREFIX="/usr" "${DEFAULT_SRC_INSTALL_PARAMS[@]}" install
+
+    insinto /etc/conf.d
+    doins ${FILES}/xboxdrv.conf
+
+    insinto /usr/${LIBDIR}/systemd/system
+    doins ${FILES}/xboxdrv.service
+}
