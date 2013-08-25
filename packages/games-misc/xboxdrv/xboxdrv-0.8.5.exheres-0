@@ -22,7 +22,7 @@ DEPENDENCIES="
         sys-apps/dbus
         sys-apps/systemd
         dev-libs/glib:2
-        dev-libs/libusb:1
+        virtual/usb:1
         x11-libs/libX11
 "
 
