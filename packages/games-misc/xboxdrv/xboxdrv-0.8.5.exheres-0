@@ -1,4 +1,4 @@
-# Copyright 2013 Jakob Nixdorf
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
 require scons
@@ -31,9 +31,9 @@ BUGS_TO="flocke@shadowice.org"
 WORK="${WORKBASE}/${MY_PNV}"
 
 src_install() {
-    emake -j1 DESTDIR="${IMAGE}" PREFIX="/usr" "${DEFAULT_SRC_INSTALL_PARAMS[@]}" install
+    emake -j1 DESTDIR="${IMAGE}" PREFIX="/usr" install
 
-    insinto /etc/conf.d
+    insinto /etc/
     doins ${FILES}/xboxdrv.conf
 
     insinto /usr/${LIBDIR}/systemd/system

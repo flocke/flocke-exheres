@@ -1,10 +1,8 @@
 [Unit]
-Description = xboxdrv
+Description = Userspace XBox 360 controller driver daemon
 
 [Service]
-User = root
-Type = simple
-ExecStart = /usr/bin/xboxdrv -c /etc/conf.d/xboxdrv
+ExecStart = /usr/bin/xboxdrv -c /etc/xboxdrv.conf
 
 [Install]
 WantedBy = multi-user.target
