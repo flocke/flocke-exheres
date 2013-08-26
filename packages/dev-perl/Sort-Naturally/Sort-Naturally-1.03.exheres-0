@@ -8,3 +8,4 @@ SUMMARY="sort lexically, but sort numeral parts numerically"
 SLOT=0
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
+
