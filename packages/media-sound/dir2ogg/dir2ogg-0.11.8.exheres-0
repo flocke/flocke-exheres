@@ -35,5 +35,6 @@ BUGS_TO="flocke@shadowice.org"
 src_install() {
     dobin dir2ogg
     doman dir2ogg.1
-    dodoc NEWS README
+
+    emagicdocs
 }
