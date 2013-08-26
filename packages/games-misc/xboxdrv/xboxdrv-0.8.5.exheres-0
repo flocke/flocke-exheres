@@ -34,8 +34,8 @@ src_install() {
     emake -j1 DESTDIR="${IMAGE}" PREFIX="/usr" install
 
     insinto /etc/
-    doins ${FILES}/xboxdrv.conf
+    doins "${FILES}/xboxdrv.conf"
 
     insinto /usr/${LIBDIR}/systemd/system
-    doins ${FILES}/xboxdrv.service
+    doins "${FILES}/xboxdrv.service"
 }
