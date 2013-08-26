@@ -18,7 +18,7 @@ BUGS_TO="flocke@shadowice.org"
 
 DEPENDENCIES="
     build+run:
-        dev-lang/perl
+        dev-lang/perl:=
         dev-perl/File-KeePass
         dev-perl/Term-ShellUI
         dev-perl/TermReadKey
@@ -28,6 +28,5 @@ DEPENDENCIES="
 WORK="${WORKBASE}"
 
 src_install() {
-    cp ${FETCHEDDIR}/${PNV}.pl ${PN}
-    dobin ${PN}
+    newbin "${FETCHEDDIR}/${PNV}.pl" ${PN}
 }
