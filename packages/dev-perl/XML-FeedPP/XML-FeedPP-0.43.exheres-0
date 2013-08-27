@@ -1,0 +1,15 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require perl-module [ module_author=KAWASAKI ]
+
+SUMMARY="Pure Perl implementation to parse/write/merge/edit RSS/RDF/Atom syndication feeds."
+
+SLOT=0
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-perl/XML-TreePP"
+
