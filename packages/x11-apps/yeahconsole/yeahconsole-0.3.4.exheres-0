@@ -1,0 +1,27 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Turns a terminal into a gamelike drop-down console."
+HOMEPAGE="http://phrat.de/yeahtools.html"
+DOWNLOADS="http://phrat.de/${PNV}.tar.gz"
+
+LICENCES="GPL-1"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/libX11
+    suggestion:
+        x11-apps/xterm [[ description = [ YeahConsole needs a terminal to work ] ]] 
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+src_install() {
+    dobin ${PN}
+
+    emagicdocs
+}
+
