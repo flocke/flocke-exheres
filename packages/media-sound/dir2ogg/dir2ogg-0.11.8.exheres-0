@@ -21,11 +21,11 @@ DEPENDENCIES="
         dev-python/mutagen
         media-sound/vorbis-tools
     suggestion:
-        media-libs/mac-port [[ description = [ Used to decode APE (Monkey's Audio) files ] ]]
-        media-sound/mpg123 [[ description = [ Used to decode MP3 files (same feature as provided by lame) ] ]]
-        media-sound/lame [[ description = [ Used to decode MP3 files (same feature as provided by mpg123) ] ]]
         media-libs/faad2 [[ description = [ Used to decode MP4/M4A/AAC files ] ]]
         media-libs/flac [[ description = [ Used to decode FLAC files ] ]]
+        media-libs/mac-port [[ description = [ Used to decode APE (Monkey's Audio) files ] ]]
+        media-sound/lame [[ description = [ Used to decode MP3 files (same feature as provided by mpg123) ] ]]
+        media-sound/mpg123 [[ description = [ Used to decode MP3 files (same feature as provided by lame) ] ]]
         media/cdparanoia [[ description = [ Used to decode Audio-CDs ] ]]
         media/mplayer [[ description = [ Used to decode many of the supported audio formats ] ]]
 "

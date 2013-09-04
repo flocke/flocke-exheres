@@ -19,9 +19,9 @@ DEPENDENCIES="
         dev-util/pkg-config
     build+run:
         dev-libs/boost
+        dev-libs/glib:2
         sys-apps/dbus
         sys-apps/systemd
-        dev-libs/glib:2
         virtual/usb:1
         x11-libs/libX11
 "
