@@ -1,0 +1,27 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+MY_PN="python-${PN}"
+MY_PNV="python-${PNV}"
+
+require pypi setuptools [ python_dep='[>=2.7]' ]
+
+SUMMARY="An open source cryptographic toolkit designed to make it easier and safer for developers to
+use cryptography in their applications"
+HOMEPAGE="http://www.keyczar.org/"
+
+LICENCES="Apache-2.0"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/pyasn1[python_abis:*(-)?]
+        dev-python/pycrypto[>=2.0][python_abis:*(-)?]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+WORK="${WORKBASE}/${MY_PNV}"
+
