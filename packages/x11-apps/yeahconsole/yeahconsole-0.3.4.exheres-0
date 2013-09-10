@@ -14,8 +14,8 @@ DEPENDENCIES="
     build+run:
         x11-libs/libX11
     suggestion:
-        x11-apps/xterm [[ description = [ Possible terminal-backend for YeahConsole (alternative to rxvt-unicode). ] ]] 
         x11-apps/rxvt-unicode [[ description = [ Possible terminal-backend for YeahConsole (alternative to xterm). ] ]]
+        x11-apps/xterm [[ description = [ Possible terminal-backend for YeahConsole (alternative to rxvt-unicode). ] ]] 
 "
 
 BUGS_TO="flocke@shadowice.org"
