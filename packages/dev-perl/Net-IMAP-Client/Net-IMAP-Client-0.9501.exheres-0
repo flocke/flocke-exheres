@@ -1,0 +1,16 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require perl-module [ module_author=GANGLION ]
+
+SUMMARY="Not so simple IMAP client library."
+
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-perl/IO-Socket-SSL
+        dev-perl/List-MoreUtils
+"
