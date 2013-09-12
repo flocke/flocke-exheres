@@ -33,6 +33,11 @@ DEPENDENCIES="
 
 BUGS_TO="flocke@shadowice.org"
 
+src_prepare() {
+    # Always use python2 (not compatible with python3)
+    edo sed -i -e 's#/usr/bin/python$#/usr/bin/python2#' dir2ogg
+}
+
 src_install() {
     dobin dir2ogg
     doman dir2ogg.1
