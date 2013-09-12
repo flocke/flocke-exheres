@@ -1,7 +1,7 @@
 # Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require pypi setuptools [ python_dep='[>=2.7]' ]
+require pypi setuptools [ python_sup='2.6 2.7' python_dep='[<3]' ]
 
 SUMMARY="Collection of snippets that are used in multiple projects, primarily goobook"
 
