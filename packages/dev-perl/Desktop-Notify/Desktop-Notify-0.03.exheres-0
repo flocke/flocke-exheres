@@ -1,0 +1,16 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require perl-module [ module_author=SACAVILIA ]
+
+SUMMARY="Communicate with the Desktop Notifications framework."
+
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-perl/Class-Accessor
+        dev-perl/Net-DBus[>=0.33]
+"
