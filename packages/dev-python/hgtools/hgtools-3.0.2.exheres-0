@@ -1,0 +1,22 @@
+# Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi [ suffix="zip" ] setuptools [ python_dep='[>=2.6]' ]
+
+SUMMARY="Classes and plugins for setuptools to handle Mercurial repositories."
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    run:
+        dev-scm/mercurial
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+# TODO
+RESTRICT="test"
+
