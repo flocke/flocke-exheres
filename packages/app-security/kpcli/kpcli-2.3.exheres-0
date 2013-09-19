@@ -23,6 +23,8 @@ DEPENDENCIES="
         dev-perl/Term-ShellUI
         dev-perl/TermReadKey
         dev-perl/Sort-Naturally
+    suggestion:
+        dev-perl/Term-ReadLine-Gnu [[ description = [ Provides a better readline support. ] ]]
 "
 
 WORK=${WORKBASE}
