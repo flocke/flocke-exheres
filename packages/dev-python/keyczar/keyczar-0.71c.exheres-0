@@ -4,7 +4,7 @@
 MY_PN="python-${PN}"
 MY_PNV="python-${PNV}"
 
-require pypi distutils [ python_sup='2.6 2.7' python_dep='[>=2.7&<3]' ]
+require pypi distutils [ python_sup='2.7' python_dep='[>=2.7&<3]' ]
 
 SUMMARY="An open source cryptographic toolkit designed to make it easier and safer for developers to
 use cryptography in their applications"
