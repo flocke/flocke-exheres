@@ -1,7 +1,7 @@
 # Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require setuptools [ python_sup='2.7' python_dep='[>=2.7&<3]' ]
+require setup-py [ import=setuptools multibuild=false blacklist="2.6 3" ]
 
 SUMMARY="Search your google contacts from the command-line or mutt."
 DESCRIPTION="
