@@ -1,7 +1,7 @@
 # Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require python [ python_sup='2.6 2.7' python_dep='[<3]' has_bin=true ]
+require python [ has_bin=true has_lib=false blacklist="3" ]
 
 SUMMARY="Script to convert many audio formats into the ogg-vorbis format."
 DESCRIPTION="
