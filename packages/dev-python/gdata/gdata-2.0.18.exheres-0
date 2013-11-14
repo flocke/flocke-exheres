@@ -1,7 +1,7 @@
 # Copyright 2010 Elias Pipping <pipping@exherbo.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require distutils [ python_sup='2.6 2.7' python_dep='[>=2.5&<3]' ] googlecode [ project=gdata-python-client suffix=tar.gz ]
+require setup-py [ import=distutils blacklist="3" ] googlecode [ project=gdata-python-client suffix=tar.gz ]
 
 SUMMARY="Google Data APIs Python Client Library"
 
@@ -11,4 +11,8 @@ PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
 
 DEPENDENCIES=""
+
+test_one_multibuild() {
+    edo ${PYTHON} tests/run_data_tests.py
+}
 
