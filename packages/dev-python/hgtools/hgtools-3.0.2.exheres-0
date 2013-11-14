@@ -1,7 +1,7 @@
 # Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require pypi [ suffix="zip" ] setuptools [ python_dep='[>=2.6]' ]
+require setup-py [ import=setuptools ] pypi [ suffix="zip" ]
 
 SUMMARY="Classes and plugins for setuptools to handle Mercurial repositories."
 
@@ -16,7 +16,4 @@ DEPENDENCIES="
 "
 
 BUGS_TO="flocke@shadowice.org"
-
-# TODO
-RESTRICT="test"
 
