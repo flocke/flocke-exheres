@@ -1,7 +1,7 @@
 # Copyright 2013 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require googlecode [ project="pyfilesystem" suffix="tar.gz" ] distutils [ python_sup='2.6 2.7' python_dep='[<3]' ]
+require setup-py [ import=distutils blacklist="3" ] googlecode [ project="pyfilesystem" suffix="tar.gz" ]
 
 SUMMARY="A simplified common interface to many filesystems for python."
 REMOTE_IDS="pypi:${PN}"
