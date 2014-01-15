@@ -4,7 +4,7 @@
 MY_PN="python-${PN}"
 MY_PNV="python-${PNV}"
 
-require setup-py [ import=setuptools blacklist="2.6 3" multibuild=false ] pypi
+require setup-py [ import=setuptools blacklist="3" multibuild=false ] pypi
 
 SUMMARY="An open source cryptographic toolkit designed to make it easier and safer for developers to
 use cryptography in their applications"
