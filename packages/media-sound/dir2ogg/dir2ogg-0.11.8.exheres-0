@@ -9,7 +9,7 @@ dir2ogg is a python script which converts APE, MP3, MP4, M4A, AAC, FLAC, MPC (Mu
 WMA, ASF files and Audio-CDs into the ogg-vorbis format, including their tags.
 "
 
-HOMEPAGE="http://jak-linux.org/projects/dir2ogg/"
+HOMEPAGE="http://jak-linux.org/projects/${PN}/"
 DOWNLOADS="http://jak-linux.org/projects/${PN}/$(ever range 1-2)/${PNV}.tar.gz"
 
 LICENCES="GPL-2"
@@ -44,3 +44,4 @@ src_install() {
 
     emagicdocs
 }
+
