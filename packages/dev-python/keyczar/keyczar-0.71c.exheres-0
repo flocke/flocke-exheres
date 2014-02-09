@@ -6,8 +6,7 @@ MY_PNV="python-${PNV}"
 
 require setup-py [ import=setuptools blacklist="3" multibuild=false ] pypi
 
-SUMMARY="An open source cryptographic toolkit designed to make it easier and safer for developers to
-use cryptography in their applications"
+SUMMARY="An open source toolkit for safe and simple cryptography"
 HOMEPAGE="http://www.keyczar.org/"
 
 LICENCES="Apache-2.0"
@@ -26,7 +25,7 @@ BUGS_TO="flocke@shadowice.org"
 WORK="${WORKBASE}/${MY_PNV}"
 
 src_test() {
-    cd tests/keyczar_tests
+    edo cd tests/keyczar_tests
 
     edo ${PYTHON} alltests.py
 }
