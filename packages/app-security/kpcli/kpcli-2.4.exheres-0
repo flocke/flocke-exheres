@@ -24,8 +24,14 @@ DEPENDENCIES="
         dev-perl/Term-ShellUI
         dev-perl/TermReadKey
         dev-perl/Sort-Naturally
-    suggestion:
+    recommendation:
         dev-perl/Term-ReadLine-Gnu [[ description = [ Provides a better readline support. ] ]]
+    suggestion:
+        (
+            dev-perl/Capture-Tiny [[ description = [ Required to safely load the Clipboard module. ] ]]
+            dev-perl/Clipboard [[ description = [ Provides access to the X11 clipboard. ] ]]
+        ) [[ *group-name = clipboard ]]
+        dev-perl/Data-Password [[ description = [ Provides support for assessing password quality. ] ]]
 "
 
 WORK=${WORKBASE}
