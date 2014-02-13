@@ -19,6 +19,7 @@ BUGS_TO="flocke@shadowice.org"
 DEPENDENCIES="
     build+run:
         dev-lang/perl:=
+        dev-perl/Crypt-Rijndael
         dev-perl/File-KeePass
         dev-perl/Term-ShellUI
         dev-perl/TermReadKey
