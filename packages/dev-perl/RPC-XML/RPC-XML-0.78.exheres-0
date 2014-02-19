@@ -1,0 +1,26 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require perl-module [ module_author=RJRAY ]
+
+SUMMARY="A Perl implementation of the XML-RPC specification"
+
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-perl/XML-Parser
+        dev-perl/libwww-perl
+    suggestion:
+        dev-perl/DateTime-Format-ISO8601 [[ description = [ Required for extended parsing of date/time strings. ] ]]
+        dev-perl/Net-Server [[ description = [ Required to use RPC::XML::Server in non-HTTP environments. ] ]]
+        dev-perl/XML-LibXML [[ description = [ Alternative XML parser based on libxml2. ] ]]
+"
+
+src_prepare() {
+    # Remove the one test that fails with an Access violation in sydbox
+    edo rm t/41_server_hang.t
+}
+
