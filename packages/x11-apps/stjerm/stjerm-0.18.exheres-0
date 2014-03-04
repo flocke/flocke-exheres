@@ -1,0 +1,24 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+MY_PV="v${PV}"
+
+require github autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 1.12 1.11 1.10 ] ]
+
+SUMMARY="A minimalistic roll-down terminal emulator."
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/glib:2[>=2.32]
+        dev-libs/vte:0[>=0.28]
+        x11-libs/gtk+:2[>=2.24]
+        x11-libs/libXinerama
+"
+
+BUGS_TO="flocke@shadowice.org"
+
