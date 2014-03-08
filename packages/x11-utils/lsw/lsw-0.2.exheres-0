@@ -1,0 +1,13 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require lsw
+
+DOWNLOADS="http://dl.suckless.org/tools/${PNV}.tar.gz"
+
+PLATFORMS="~amd64"
+
+DEFAULT_SRC_PREPARE_PATCHES=(
+    ${FILES}/lsw-0.2_ensure_manpage_dir_exists.patch
+)
+

@@ -1,0 +1,20 @@
+From 6f321d7fb63fb80b4726e706cdab5d1807d55976 Mon Sep 17 00:00:00 2001
+From: Connor Lane Smith <cls@lubutu.com>
+Date: Mon, 06 Jun 2011 11:52:04 +0000
+Subject: ensure manpage dir exists (thanks petr)
+
+---
+diff --git a/Makefile b/Makefile
+index 1d2f43d..7a324ef 100644
+--- a/Makefile
++++ b/Makefile
+@@ -40,6 +40,7 @@ install: all
+ 	@cp -f lsw ${DESTDIR}${PREFIX}/bin
+ 	@chmod 755 ${DESTDIR}${PREFIX}/bin/lsw
+ 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1/lsw.1
++	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+ 	@sed "s/VERSION/${VERSION}/g" < lsw.1 > ${DESTDIR}${MANPREFIX}/man1/lsw.1
+ 	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/lsw.1
+ 
+--
+cgit v0.9.0.3-65-g4555

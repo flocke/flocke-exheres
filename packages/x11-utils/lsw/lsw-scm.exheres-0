@@ -1,0 +1,9 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://git.suckless.org/lsw"
+
+require lsw scm-git
+
+PLATFORMS="~amd64"
+

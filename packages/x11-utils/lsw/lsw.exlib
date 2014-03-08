@@ -1,0 +1,19 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="List the titles and XIDs of all X clients."
+HOMEPAGE="http://tools.suckless.org/lsw"
+
+LICENCES="MIT"
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/libX11
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr )
+
