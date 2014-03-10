@@ -1,0 +1,14 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require setup-py [ has_bin=true import=distutils multibuild=false ]
+
+SUMMARY="A simple, vim-like file manager."
+HOMEPAGE="http://${PN}.nongnu.org"
+
+LICENCES="GPL-3"
+SLOT="0"
+MYOPTIONS=""
+
+BUGS_TO="flocke@shadowice.org"
+
