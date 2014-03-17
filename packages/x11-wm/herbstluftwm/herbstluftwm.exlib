@@ -1,0 +1,50 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require bash-completion zsh-completion
+
+SUMMARY="A manual tiling window manager for X"
+HOMEPAGE="http://herbstluftwm.org"
+
+LICENCES="BSD-2"
+SLOT="0"
+MYOPTIONS="xinerama"
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/glib:2[>=2.14]
+        x11-libs/libX11
+    suggestion:
+        app-shells/bash [[ description = [ Required to run the default autostart script. ] ]]
+"
+
+if ever at_least scm; then
+    DEPENDENCIES+="
+        build:
+            app-doc/asciidoc
+    "
+fi
+
+BUGS_TO="flocke@shadowice.org"
+
+DEFAULT_SRC_COMPILE_PARAMS=( PREFIX=/usr )
+DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr )
+
+src_prepare() {
+    default
+
+    # Don't install completion files, use {bash,zsh}-completion.exlib
+    edo sed -i -e '/BASHCOMPLETIONDIR/d' -e '/ZSHCOMPLETIONDIR/d' ${WORK}/Makefile
+
+    if ! option xinerama; then
+        edo sed -i -e '/XINERAMALIBS =/d' -e '/XINERAMAFLAGS =/d' ${WORK}/config.mk
+    fi
+}
+
+src_install() {
+    default
+
+    dobashcompletion ${WORK}/share/herbstclient-completion
+    dozshcompletion ${WORK}/share/_herbstclient
+}
+
