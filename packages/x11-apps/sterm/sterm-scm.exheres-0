@@ -1,0 +1,25 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://shadowice.org/sterm.git"
+
+require scm-git cmake [ api=2 cmake_minimum_version=2.8.8 ]
+
+SUMMARY="A simple and minimalistic terminal emulator based on VTE-2.90"
+HOMEPAGE="http://git.shadowice.org/sterm.git/"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/glib:2
+        dev-libs/vte:3.0[>=0.36.0]
+        x11-libs/gtk+:3
+        x11-libs/pango
+"
+
+BUGS_TO="flocke@shadowice.org"
+
