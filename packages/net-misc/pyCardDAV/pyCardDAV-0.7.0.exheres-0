@@ -1,0 +1,30 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require setup-py [ blacklist="3" has_bin=true import=setuptools multibuild=false ] pypi
+
+SUMMARY="pyCardDAV is a simple to use CardDAV CLI client"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/lxml[python_abis:*(-)?]
+        dev-python/pyxdg[python_abis:*(-)?]
+        dev-python/requests[python_abis:*(-)?]
+        dev-python/urwid[python_abis:*(-)?]
+        dev-python/vobject[python_abis:*(-)?]
+    suggestion:
+        dev-python/keyring[python_abis:*(-)?] [[ description = [ Support for storing login information in a keyring (with multiple backends). ] ]]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+# No tests supplied upstream but setuptools still wants to run them
+RESTRICT=test
+
+DEFAULT_SRC_INSTALL_EXTRA_DOCS=( 'pycard.conf.sample' )
+
