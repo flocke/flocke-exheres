@@ -10,5 +10,19 @@ LICENCES="GPL-3"
 SLOT="0"
 MYOPTIONS=""
 
+DEPENDENCIES="
+    suggestion:
+        app-admin/sudo [[ description = [ to use the \"run as root\"-feature ] ]]
+        app-arch/atool [[ description = [ for previews of archives ] ]]
+        app-text/highlight [[ description = [ for syntax highlighting of code ] ]]
+        app-text/poppler [[ description = [ for pdf previews ] ]]
+        dev-python/chardet[python_abis:*(-)?] [[ description = [ in case of encoding detection problems ] ]]
+        media/mediainfo [[ description = [ for viewing information about media files ] ]]
+        media-libs/libcaca [[ description = [ for previewing images in ASCII-art ] ]]
+        net-p2p/transmission [[ description = [ for viewing bit-torrent information ] ]]
+        net-www/w3m [[ description = [ for html and previewing images in \"true color\" ] ]]
+        sys-apps/file [[ description = [ for determining file types ] ]]
+"
+
 BUGS_TO="flocke@shadowice.org"
 
