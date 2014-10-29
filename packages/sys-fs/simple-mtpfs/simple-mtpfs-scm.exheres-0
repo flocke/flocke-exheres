@@ -1,0 +1,20 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user='phatina' ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 1.12 1.11 ] ]
+
+SUMMARY="Simple FUSE filesystem driver for MTP devices."
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        media-libs/libmtp
+        sys-fs/fuse[>=2.7.3]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
