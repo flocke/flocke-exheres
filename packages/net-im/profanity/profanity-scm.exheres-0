@@ -1,0 +1,7 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require profanity
+
+PLATFORMS="~amd64"
+
