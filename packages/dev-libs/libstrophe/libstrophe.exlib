@@ -1,0 +1,40 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="strophe" ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 1.12 1.11 1.10 1.9 ] ]
+
+SUMMARY="A minimal XMPP library written in C"
+HOMEPAGE="http://strophe.im/libstrophe"
+
+LICENCES="MIT"
+SLOT="0"
+MYOPTIONS="
+    doc
+    xml [[ description = [ Use libxml2 instead of expat ] ]]
+"
+
+DEPENDENCIES="
+    build:
+        doc? ( app-doc/doxygen )
+    build+run:
+        dev-libs/openssl
+        !xml? ( dev-libs/expat )
+        xml? ( dev-libs/libxml2:2.0 )
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+DEFAULT_SRC_CONFIGURE_OPTIONS=( 'xml --with-libxml2' )
+
+src_compile() {
+    default
+
+    option doc && edo doxygen
+}
+
+src_install() {
+    default
+
+    option doc && cd docs && dodoc -r html
+}
+
