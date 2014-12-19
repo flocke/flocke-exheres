@@ -1,0 +1,23 @@
+# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="np1" tag="v${PV}" ] setup-py [ blacklist="3.2" has_bin=true import=setuptools multibuild=false ] 
+
+SUMMARY="Terminal based YouTube player and downloader"
+REMOTE_IDS="pypi:${PN}"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/pafy[python_abis:*(-)?]
+    suggestion:
+        media/mpv [[ description = [ Used for playback of the downloaded content (alternative to mplayer). ] ]]
+        media/mplayer [[ description = [ Used for playback of the downloaded content (alternative to mpv). ] ]]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
