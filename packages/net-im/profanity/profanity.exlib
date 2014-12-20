@@ -26,6 +26,8 @@ DEPENDENCIES="
         sys-libs/ncurses
         libnotify? ( x11-libs/libnotify )
         xscreensaver? ( x11-libs/libXScrnSaver )
+    test:
+        dev-util/cmocka
 "
 
 BUGS_TO="flocke@shadowice.org"
