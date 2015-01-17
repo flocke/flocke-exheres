@@ -7,7 +7,7 @@ SUMMARY="Python API to access metadata and content on YouTube"
 HOMEPAGE="http://np1.github.io/pafy"
 REMOTE_IDS="pypi:${PN}"
 
-LICENCES="GPL-3"
+LICENCES="LGPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
