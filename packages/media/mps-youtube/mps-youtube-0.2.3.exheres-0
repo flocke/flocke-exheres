@@ -13,7 +13,7 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
-        dev-python/pafy[python_abis:*(-)?]
+        dev-python/pafy[>=0.3.72][python_abis:*(-)?]
     suggestion:
         media/mpv [[ description = [ Used for playback of the downloaded content (alternative to mplayer). ] ]]
         media/mplayer [[ description = [ Used for playback of the downloaded content (alternative to mpv). ] ]]
