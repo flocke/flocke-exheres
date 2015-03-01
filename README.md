@@ -2,6 +2,49 @@
 
 3rd party repository for [Exherbo Linux](http://www.exherbo.org).
 
+## Package List
+
+* app-admin/
+  - verynice
+* app-misc/
+  - ranger
+* app-text/
+  - multitail
+* dev-libs/
+  - libstrophe
+* dev-perl/
+  - Desktop-Notify
+  - Net-IMAP-Client
+  - RPC-XML
+  - Term-ReadLine-Gnu
+  - XML-FeedPP
+  - XML-TreePP
+* dev-python/
+  - gdata
+  - pafy
+  - vobject
+* media-sound/
+  - dir2ogg
+* media/
+  - mps-youtube
+* net-im/
+  - profanity
+* net-misc/
+  - pyCardDAV
+* net-print/
+  - cups-bjnp
+* sys-fs/
+  - simple-mtpfs
+* x11-apps/
+  - sterm
+  - stjerm
+  - svte
+  - yeahconsole
+* x11-utils/
+  - lsw
+* x11-wm/
+  - herbstluftwm
+
 ## License
 
 As a [requirement](http://exherbo.org/docs/exheres-for-smarties.html#copyright_lines) to be included in
