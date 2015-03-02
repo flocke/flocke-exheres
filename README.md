@@ -6,8 +6,6 @@
 
 * app-admin/
   - verynice
-* app-misc/
-  - ranger
 * app-text/
   - multitail
 * dev-libs/
