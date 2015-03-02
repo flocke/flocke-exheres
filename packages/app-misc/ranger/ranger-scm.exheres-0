@@ -1,9 +1,0 @@
-# Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
-# Distributed under the terms of the GNU General Public License v2
-
-SCM_REPOSITORY="git://git.savannah.nongnu.org/ranger.git"
-
-require ranger scm-git
-
-PLATFORMS="~amd64"
-
