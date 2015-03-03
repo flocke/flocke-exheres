@@ -21,8 +21,6 @@
   - gdata
   - pafy
   - vobject
-* media-sound/
-  - dir2ogg
 * media/
   - mps-youtube
 * net-im/
