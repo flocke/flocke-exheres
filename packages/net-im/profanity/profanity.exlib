@@ -28,6 +28,7 @@ DEPENDENCIES="
         xscreensaver? ( x11-libs/libXScrnSaver )
     test:
         dev-util/cmocka
+        net-libs/libotr
 "
 
 BUGS_TO="flocke@shadowice.org"
