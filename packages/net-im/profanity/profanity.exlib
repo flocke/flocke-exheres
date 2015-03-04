@@ -17,14 +17,14 @@ MYOPTIONS="
 
 DEPENDENCIES="
     build+run:
-        !xml? ( dev-libs/expat )
         dev-libs/glib:2
         dev-libs/libstrophe
-        xml? ( dev-libs/libxml2:2.0 )
-        otr? ( net-libs/libotr )
         net-misc/curl
         sys-libs/ncurses
         libnotify? ( x11-libs/libnotify )
+        otr? ( net-libs/libotr )
+        xml? ( dev-libs/libxml2:2.0 )
+        !xml? ( dev-libs/expat )
         xscreensaver? ( x11-libs/libXScrnSaver )
     test:
         dev-util/cmocka
