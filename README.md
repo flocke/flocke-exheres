@@ -4,8 +4,6 @@
 
 ## Package List
 
-* app-admin/
-  - verynice
 * app-text/
   - multitail
 * dev-libs/
