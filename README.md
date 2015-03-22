@@ -4,8 +4,6 @@
 
 ## Package List
 
-* app-text/
-  - multitail
 * dev-libs/
   - libstrophe
 * dev-perl/
