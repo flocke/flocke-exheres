@@ -21,6 +21,7 @@
   - mps-youtube
 * net-im/
   - profanity
+  - telegram-cli
 * net-misc/
   - pyCardDAV
 * net-print/
