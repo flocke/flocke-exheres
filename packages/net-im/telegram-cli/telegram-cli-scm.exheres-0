@@ -1,0 +1,58 @@
+# Copyright 2015 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+MY_PN="tg"
+
+SCM_SECONDARY_REPOSITORIES="tgl tl_parser"
+
+SCM_tgl_REPOSITORY="https://github.com/vysheng/tgl.git"
+SCM_tl_parser_REPOSITORY="https://github.com/vysheng/tl-parser.git"
+
+SCM_EXTERNAL_REFS="tgl:tgl"
+SCM_tgl_EXTERNAL_REFS="tl-parser:tl_parser"
+
+require github [ user="vysheng" ] lua [ multibuild=false with_opt=true ]
+
+SUMMARY="Commandline client for the Telegram messenger."
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/libconfig
+        dev-libs/libevent
+        dev-libs/openssl
+        sys-libs/ncurses
+        sys-libs/readline
+        sys-libs/zlib
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+src_configure() {
+    local opts=( $(option_enable lua liblua) )
+
+    if option lua; then
+        local lua_abi=$(lua_get_abi)
+
+        opts+=(
+            "LUA=/usr/bin/lua${lua_abi}"
+            "LUA_INCLUDE=-I/usr/include/lua${lua_abi}"
+            "LUA_LIB=-llua${lua_abi}"
+        )
+    fi
+
+    econf "${opts[@]}"
+}
+
+src_install() {
+    dobin bin/telegram-cli
+
+    insinto /etc/telegram-cli/
+    newins tg-server.pub server.pub
+
+    emagicdocs
+}
+
