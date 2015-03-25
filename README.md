@@ -32,8 +32,6 @@
   - stjerm
   - svte
   - yeahconsole
-* x11-utils/
-  - lsw
 * x11-wm/
   - herbstluftwm
 
