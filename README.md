@@ -31,7 +31,6 @@
 * x11-apps/
   - sterm
   - stjerm
-  - svte
   - yeahconsole
 * x11-wm/
   - herbstluftwm
