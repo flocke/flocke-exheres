@@ -27,8 +27,11 @@ fi
 
 BUGS_TO="flocke@shadowice.org"
 
-DEFAULT_SRC_COMPILE_PARAMS=( PREFIX=/usr )
-DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr )
+DEFAULT_SRC_PREPARE_PATCHES=(
+    "${FILES}"/config-patch.patch
+    )
+DEFAULT_SRC_COMPILE_PARAMS=( PREFIX=/usr/$(exhost --target) )
+DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr/$(exhost --target) )
 
 src_prepare() {
     default
