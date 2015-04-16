@@ -31,6 +31,10 @@ DEPENDENCIES="
 
 BUGS_TO="flocke@shadowice.org"
 
+DEFAULT_SRC_PREPARE_PATCHES=(
+    "${FILES}/0001-Set-the-ar-command-as-variable-in-Makefile.tgl.patch"
+)
+
 src_configure() {
     local opts=( $(option_enable lua liblua) )
 
