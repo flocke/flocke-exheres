@@ -20,3 +20,5 @@ DEPENDENCIES="
 
 BUGS_TO="flocke@shadowice.org"
 
+CMAKE_SRC_CONFIGURE_PARAMS=( -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/${PNV} )
+
