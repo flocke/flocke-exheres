@@ -32,6 +32,10 @@ DEFAULT_SRC_PREPARE_PATCHES=(
     "${FILES}"/config-patch.patch
 )
 
+if ever is_scm; then
+    DEFAULT_SRC_COMPILE_PARAMS=( LDXX=${CXX} )
+fi
+
 DEFAULT_SRC_INSTALL_PARAMS=(
     PREFIX=/usr/$(exhost --target)
     DATADIR=/usr/share
