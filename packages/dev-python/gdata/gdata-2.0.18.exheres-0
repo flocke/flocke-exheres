@@ -13,6 +13,6 @@ MYOPTIONS=""
 DEPENDENCIES=""
 
 test_one_multibuild() {
-    edo ${PYTHON} tests/run_data_tests.py
+    PYTHONPATH="$(ls -d ${PWD}/build/lib*)" edo ${PYTHON} tests/run_data_tests.py
 }
 
