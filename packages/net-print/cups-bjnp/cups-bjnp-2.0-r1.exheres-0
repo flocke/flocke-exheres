@@ -19,7 +19,7 @@ DEPENDENCIES="
         net-print/cups
 "
 
-DEFAULT_SRC_CONFIGURE_PARAMS=( --with-cupsbackenddir=/usr/libexec/cups/backend )
+DEFAULT_SRC_CONFIGURE_PARAMS=( --with-cupsbackenddir=/usr/$(exhost --target)/libexec/cups/backend )
 
 BUGS_TO="flocke@shadowice.org"
 
