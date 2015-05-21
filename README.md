@@ -16,6 +16,7 @@
 * dev-python/
   - gdata
   - pafy
+  - python-poppler-qt4
   - vobject
 * media/
   - mps-youtube

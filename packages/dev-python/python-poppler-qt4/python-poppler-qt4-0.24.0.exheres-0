@@ -1,0 +1,27 @@
+# Copyright 2015 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="Python bindings for libpoppler-qt4"
+
+LICENCES="LGPL-2.1"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+BUGS_TO="flocke@shadowice.org"
+
+DEPENDENCIES="
+    build+run:
+        app-text/poppler[qt4][>=0.12.0]
+        dev-python/PyQt4[python_abis:*(-)?]
+        dev-python/sip[python_abis:*(-)?][>=4.9.1]
+"
+
+prepare_one_multibuild() {
+    edo sed -i -e "s/pkg-config/$(exhost --tool-prefix)pkg-config/g" setup.py
+
+    setup-py_prepare_one_multibuild
+}
+
