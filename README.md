@@ -4,6 +4,8 @@
 
 ## Package List
 
+* app-text/
+  - krop
 * dev-libs/
   - libstrophe
 * dev-perl/
