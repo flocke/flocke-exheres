@@ -1,7 +1,7 @@
 # Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user="np1" tag="v${PV}" ] setup-py [ import=setuptools ]
+require github [ user="np1" tag="v${PV}" ] setup-py [ has_bin=true import=setuptools ]
 
 SUMMARY="Python API to access metadata and content on YouTube"
 HOMEPAGE="http://np1.github.io/pafy"
