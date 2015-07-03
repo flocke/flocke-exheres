@@ -11,13 +11,16 @@ SLOT="0"
 MYOPTIONS="
     doc
     xml [[ description = [ Use libxml2 instead of expat ] ]]
+
+    ( providers: libressl openssl ) [[ number-selected = exactly-one ]]
 "
 
 DEPENDENCIES="
     build:
         doc? ( app-doc/doxygen )
     build+run:
-        dev-libs/openssl
+        providers:libressl? ( dev-libs/libressl:= )
+        providers:openssl? ( dev-libs/openssl )
         !xml? ( dev-libs/expat )
         xml? ( dev-libs/libxml2:2.0 )
 "
