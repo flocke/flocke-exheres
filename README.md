@@ -23,18 +23,15 @@
 * media/
   - mps-youtube
 * net-im/
+  - pidgin-opensteamworks
   - profanity
   - telegram-cli
 * net-misc/
   - pyCardDAV
-* net-print/
-  - cups-bjnp
 * sys-fs/
   - simple-mtpfs
 * x11-apps/
   - sterm
-  - stjerm
-  - yeahconsole
 * x11-wm/
   - herbstluftwm
 
