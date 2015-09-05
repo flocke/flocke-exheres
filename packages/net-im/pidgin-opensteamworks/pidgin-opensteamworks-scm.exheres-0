@@ -1,0 +1,44 @@
+# Copyright 2015 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="EionRobb" ]
+
+SUMMARY="Plugin for libpurple/Pidgin adding support for the Steam chat using the Steam Mobile API."
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build:
+        gnome-desktop/libgnome-keyring:1
+        virtual/pkg-config
+    build+run:
+        core/json-glib
+        dev-libs/glib:2
+        dev-libs/libgcrypt
+        net-im/pidgin
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+WORK="${WORKBASE}/${PNV}/steam-mobile"
+
+# The default CRYPT_BACKEND (nss) is broken (adding a new account fails)
+DEFAULT_SRC_COMPILE_PARAMS=( COMPILER="${CC}" CRYPT_BACKEND="gcrypt" )
+
+src_install() {
+    local plugindir="$(${PKG_CONFIG} --variable=plugindir purple)"
+    local datarootdir="$(${PKG_CONFIG} --variable=datarootdir purple)"
+    
+    insinto "${plugindir}"
+    doins libsteam.so
+
+    for size in 16 22 48; do
+        insinto "${datarootdir}/pixmaps/pidgin/protocols/${size}"
+        newins "steam${size}.png" "steam.png"
+    done
+
+    dodoc "${WORKBASE}/${PNV}/README.md"
+}
+
