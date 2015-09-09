@@ -1,9 +1,7 @@
 # Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-SCM_REPOSITORY="git://git.informatik.uni-erlangen.de/re06huxa/herbstluftwm"
-
-require herbstluftwm scm-git
+require github [ user="herbstluftwm" ] herbstluftwm
 
 PLATFORMS="~amd64"
 
