@@ -23,9 +23,7 @@
 * media/
   - mps-youtube
 * net-im/
-  - pidgin-opensteamworks
   - profanity
-  - telegram-cli
 * net-misc/
   - pyCardDAV
 * sys-fs/
