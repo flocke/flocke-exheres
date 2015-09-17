@@ -1,13 +1,14 @@
 # Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require setup-py [ blacklist="3" has_bin=true import=setuptools multibuild=false ] pypi
+require github [ user="geier" ] setup-py [ blacklist="3" has_bin=true import=setuptools multibuild=false ]
 
 SUMMARY="pyCardDAV is a simple to use CardDAV CLI client"
+HOMEPAGE="http://lostpackets.de/pycarddav/"
+REMOTE_IDS+="pypi:${PN}"
 
 LICENCES="MIT"
 SLOT="0"
-PLATFORMS="~amd64"
 MYOPTIONS=""
 
 DEPENDENCIES="
