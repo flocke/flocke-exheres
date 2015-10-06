@@ -1,7 +1,7 @@
 # Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user="np1" tag="v${PV}" ] setup-py [ blacklist="2 3.2" has_bin=true import=setuptools multibuild=false ] 
+require github [ user="mps-youtube" tag="v${PV}" ] setup-py [ blacklist="2 3.2" has_bin=true import=setuptools multibuild=false ] 
 
 SUMMARY="Terminal based YouTube player and downloader"
 REMOTE_IDS="pypi:${PN}"
