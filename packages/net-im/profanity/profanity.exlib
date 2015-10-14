@@ -11,7 +11,6 @@ SLOT="0"
 MYOPTIONS="
     libnotify
     otr
-    xml [[ description = [ Use libxml2 instead of expat ] ]]
     xscreensaver [[ description = [ Use libXScrnSaver to determine the idle time ] ]]
 "
 
@@ -19,12 +18,11 @@ DEPENDENCIES="
     build+run:
         dev-libs/glib:2
         dev-libs/libstrophe
+        dev-libs/libxml2:2.0
         net-misc/curl
         sys-libs/ncurses
         libnotify? ( x11-libs/libnotify )
         otr? ( net-libs/libotr )
-        xml? ( dev-libs/libxml2:2.0 )
-        !xml? ( dev-libs/expat )
         xscreensaver? ( x11-libs/libXScrnSaver )
     test:
         dev-util/cmocka
@@ -32,7 +30,6 @@ DEPENDENCIES="
 
 BUGS_TO="flocke@shadowice.org"
 
-DEFAULT_SRC_CONFIGURE_OPTIONS=( 'xml --with-libxml2' )
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'libnotify notifications' 'otr' )
 DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( 'xscreensaver' )
 
