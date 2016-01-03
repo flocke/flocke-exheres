@@ -1,7 +1,7 @@
 # Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user="mps-youtube" tag="v${PV}" ] setup-py [ has_bin=true import=setuptools ]
+require github [ user="mps-youtube" tag="v${PV}" ] setup-py [ has_bin=true import=setuptools test=nose ]
 
 SUMMARY="Python API to access metadata and content on YouTube"
 HOMEPAGE="http://np1.github.io/pafy"
@@ -18,4 +18,7 @@ DEPENDENCIES="
 "
 
 BUGS_TO="flocke@shadowice.org"
+
+# Almost every test wants to access videos on YouTube, which obviously causes access violations is sydbox.
+RESTRICT="test"
 
