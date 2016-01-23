@@ -4,6 +4,8 @@
 
 ## Package List
 
+* app-editors/
+  - gummi
 * app-text/
   - krop
 * dev-libs/
