@@ -1,0 +1,26 @@
+# Copyright 2016 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="alexandervdm" release="${PV}" suffix="tar.gz" ]
+
+SUMMARY="Simple LaTeX editor for GTK+ users"
+
+LICENCES="MIT"
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        app-spell/gtkspell:2
+        app-text/poppler[glib]
+        dev-libs/glib:2[>=2.28.6]
+        gnome-desktop/gtksourceview:2
+        x11-libs/gtk+:2[>=2.24]
+        x11-libs/pango
+    run:
+        dev-texlive/texlive-latex
+"
+
+
+BUGS_TO="flocke@shadowice.org"
+
