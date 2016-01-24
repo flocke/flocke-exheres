@@ -19,7 +19,9 @@
   - XML-TreePP
 * dev-python/
   - gdata
+  - h5py
   - pafy
+  - pkgconfig
   - python-poppler-qt4
   - vobject
 * media/
