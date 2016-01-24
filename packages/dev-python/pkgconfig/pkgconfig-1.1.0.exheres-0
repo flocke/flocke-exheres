@@ -1,0 +1,23 @@
+# Copyright 2016 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="Python interface for the pkg-config tool"
+REMOTE_IDS+=" github:matze/${PN}"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-util/pkg-config
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+# The source tarball does not ship the needed test.py file
+RESTRICT="test"
+
