@@ -1,0 +1,26 @@
+# Copyright 2016 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="Python interface to the HDF5 binary data format"
+HOMEPAGE="http://www.h5py.org/"
+REMOTE_IDS+=" github:${PN}/${PN}"
+
+LICENCES="BSD"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-python/pkgconfig[python_abis:*(-)?]
+    build+run:
+        dev-python/Cython[python_abis:*(-)?]
+        dev-python/numpy[python_abis:*(-)?]
+        dev-python/six[python_abis:*(-)?]
+        sci-libs/hdf5[>=1.8.4]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
