@@ -1,0 +1,61 @@
+# Copyright 2016 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="spyder-ide" tag="v${PV}"  ] setup-py [ has_bin=true import=setuptools multibuild=false ]
+require freedesktop-desktop gtk-icon-cache
+
+SUMMARY="Scientific PYthon Development EnviRonment providing MATLAB-like features."
+
+LICENCES="BSD"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-python/Sphinx
+    build+run:
+        dev-python/PyQt4[webkit][python_abis:*(-)?]
+    suggestion:
+        (
+            dev-python/ipython[python_abis:*(-)?]
+            dev-python/pyzmq[python_abis:*(-)?]
+        ) [[ *description = [ Enhanced Python interpreter ] *group-name = [ ipython ] ]]
+        dev-python/Pygments[python_abis:*(-)?] [[ description = [ Syntax highlighting for all supported file types ] ]]
+        dev-python/Sphinx[python_abis:*(-)?] [[ description = [ Rich-text in the Help pane ] ]]
+        dev-python/matplotlib[qt4][python_abis:*(-)?] [[ description = [ 2D/3D plotting in Python and the IPython console ] ]]
+        dev-python/numpy[python_abis:*(-)?] [[ description = [ View and edit two and three dimensional arrays in the Variable Editor ] ]]
+        dev-python/pandas[python_abis:*(-)?] [[ description = [ View and edit DataFrames and Series in the Variable Editor ] ]]
+        dev-python/pep8[python_abis:*(-)?] [[ description = [ Code style analysis ] ]]
+        dev-python/psutil[python_abis:*(-)?] [[ description = [ Display CPU and memory usage in the status bar ] ]]
+        dev-python/pyflakes[python_abis:*(-)?] [[ description = [ Real-time code analysis ] ]]
+        dev-python/pylint[python_abis:*(-)?] [[ description = [ Static code analysis ] ]]
+        dev-python/scipy[python_abis:*(-)?] [[ description = [ Import Matlab workspace files in the Variable Editor ] ]]
+        dev-util/jedi[python_abis:*(-)?] [[ description = [ Editor code completion, calltips and go-to-definition ] ]]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+# No tests provided by upstream
+RESTRICT="test"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/remove-windows-postinstall-script.patch" )
+
+src_prepare() {
+    default
+
+    # Set the correct python version in some scripts
+    edo sed -i -e "s:/usr/bin/env python:${PYTHON}:" spyderlib/userconfig.py
+    edo sed -i -e "s:/usr/bin/env python:${PYTHON}:" spyderlib/utils/external/pickleshare.py
+}
+
+pkg_postinst() {
+    freedesktop-desktop_pkg_postinst
+    gtk-icon-cache_pkg_postinst
+}
+
+pkg_postrm() {
+    freedesktop-desktop_pkg_postrm
+    gtk-icon-cache_pkg_postrm
+}
+
