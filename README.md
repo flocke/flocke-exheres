@@ -23,6 +23,7 @@
   - pafy
   - pkgconfig
   - python-poppler-qt4
+  - spyder
   - vobject
 * media/
   - mps-youtube
