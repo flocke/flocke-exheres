@@ -1,7 +1,7 @@
 # Copyright 2015 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-MY_PN="Vertex-theme"
+MY_PN="vertex-theme"
 
 require github [ user='horst3180' ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.15 1.13 ] ]
 
