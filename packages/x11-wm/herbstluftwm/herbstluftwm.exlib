@@ -28,12 +28,7 @@ fi
 
 BUGS_TO="flocke@shadowice.org"
 
-if ever is_scm; then
-    DEFAULT_SRC_COMPILE_PARAMS=( LDXX=${CXX} )
-else
-    DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/config-patch.patch )
-fi
-
+DEFAULT_SRC_COMPILE_PARAMS=( LDXX=${CXX} )
 DEFAULT_SRC_INSTALL_PARAMS=(
     PREFIX=/usr/$(exhost --target)
     DATADIR=/usr/share
