@@ -10,7 +10,8 @@ LICENCES="GPL-3"
 SLOT="0"
 MYOPTIONS="
     libnotify
-    otr
+    otr [[ description = [ Support message encryption using OTR (XEP-0364) ] ]]
+    pgp [[ description = [ Support message encryption using PGP (XEP-0027) ] ]]
     xscreensaver [[ description = [ Use libXScrnSaver to determine the idle time ] ]]
 "
 
@@ -20,6 +21,7 @@ DEPENDENCIES="
         net-misc/curl
         sys-libs/ncurses
         libnotify? ( x11-libs/libnotify )
+        pgp? ( app-crypt/gpgme )
         otr? ( net-libs/libotr )
         xscreensaver? ( x11-libs/libXScrnSaver )
     test:
@@ -54,6 +56,6 @@ fi
 
 BUGS_TO="flocke@shadowice.org"
 
-DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'libnotify notifications' 'otr' )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'libnotify notifications' 'otr' 'pgp' )
 DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( 'xscreensaver' )
 
