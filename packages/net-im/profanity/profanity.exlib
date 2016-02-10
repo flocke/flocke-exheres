@@ -21,8 +21,8 @@ DEPENDENCIES="
         net-misc/curl
         sys-libs/ncurses
         libnotify? ( x11-libs/libnotify )
-        pgp? ( app-crypt/gpgme )
         otr? ( net-libs/libotr )
+        pgp? ( app-crypt/gpgme )
         xscreensaver? ( x11-libs/libXScrnSaver )
     test:
         dev-util/cmocka
