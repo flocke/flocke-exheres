@@ -4,6 +4,8 @@
 
 ## Package List
 
+* app-editors/
+  - texstudio
 * app-text/
   - krop
 * dev-libs/

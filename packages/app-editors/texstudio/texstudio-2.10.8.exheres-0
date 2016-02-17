@@ -1,0 +1,75 @@
+# Copyright 2016 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require sourceforge [ suffix="tar.gz" ] qmake [ slot=5 ]
+require freedesktop-desktop gtk-icon-cache
+
+SUMMARY="Integrated writing environment for creating LaTeX documents"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+# For now I will only support the Qt5 version since it's the one I use,
+# feel free to add options to switch to Qt4 and submit a patch via Gerrit.
+DEPENDENCIES="
+    build:
+        virtual/pkg-config
+    build+run:
+        app-arch/quazip[qt5]
+        app-spell/hunspell
+        app-text/poppler[qt5]
+        x11-libs/qtbase:5[gui]
+        x11-libs/qtscript:5
+        x11-libs/qtsvg:5
+        x11-libs/qttools:5
+    run:
+        dev-texlive/texlive-latex
+    suggestion:
+        app-text/dvipng [[ description = [ Create PNG previews with dvipng ] ]]
+        app-text/dvipsk [[ description = [ Create PostScript documents with dvips ] ]]
+        app-text/ghostscript [[ description = [ Create PDF documents from DVI or PostScript ] ]]
+        dev-tex/biblatex-biber [[ description = [ Create bibliographies with BibLaTeX ] ]]
+        dev-texlive/texlive-luatex [[ description = [ Use LuaTeX to compile documents ] ]]
+        dev-texlive/texlive-xetex [[ description = [ Use XeTeX to compile documents ] ]]
+        x11-apps/xdg-utils [[ description = [ Use xdg-open to launch the default viewers ] ]] 
+"
+BUGS_TO="flocke@shadowice.org"
+
+WORK="${WORKBASE}/${PN}${PV}"
+
+DEFAULT_SRC_PREPARE_PATCHES=(
+    "${FILES}/texstudio-honor-datadir.patch"
+    "${FILES}/texstudio-prefixed-pkg-config.patch"
+    "${FILES}/texstudio-use-system-hunspell-quazip.patch"
+)
+
+EQMAKE_PARAMS=(
+  PREFIX="/usr/$(exhost --target)"
+  DATADIR="/usr/share"
+  USE_SYSTEM_HUNSPELL=True
+  USE_SYSTEM_QUAZIP=True
+  QUAZIP_LIB"=-lquazip5"
+  QUAZIP_INCLUDE="/usr/$(exhost --target)/include/quazip5"
+)
+
+src_install() {
+    default
+
+    for size in 16x16 22x22 32x32 48x48 64x64 128x128; do
+        insinto "/usr/share/icons/hicolor/${size}"
+        newins "utilities/${PN}${size}.png" "${PN}.png"
+    done
+}
+
+pkg_postinst() {
+    freedesktop-desktop_pkg_postinst
+    gtk-icon-cache_pkg_postinst
+}
+
+pkg_postrm() {
+    freedesktop-desktop_pkg_postrm
+    gtk-icon-cache_pkg_postrm
+}
+

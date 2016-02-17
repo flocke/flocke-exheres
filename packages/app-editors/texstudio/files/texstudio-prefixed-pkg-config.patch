@@ -1,0 +1,26 @@
+Source: self-written
+Upstream: yes
+Reason: use the correct prefixed pkg-config command
+
+# HG changeset patch
+# User Jakob Nixdorf <flocke@shadowice.org>
+# Date 1455601564 -3600
+#      Tue Feb 16 06:46:04 2016 +0100
+# Node ID fa2818913f4a0a9f25a6f0243e51634dae198f86
+# Parent  bb25842d07a36694d0afc27f0b609e62c3acf6f2
+use the same pkg-config command qmake uses internally
+
+diff -r bb25842d07a3 -r fa2818913f4a pdfviewer/pdfviewer.pri
+--- a/pdfviewer/pdfviewer.pri	Sat Feb 13 09:04:59 2016 +0100
++++ b/pdfviewer/pdfviewer.pri	Tue Feb 16 06:46:04 2016 +0100
+@@ -53,7 +53,9 @@
+ 
+         CONFIG += link_pkgconfig
+         PKGCONFIG += $${poppler_qt_pkg}
+-        system(pkg-config --atleast-version=0.24 $${poppler_qt_pkg}):DEFINES += HAS_POPPLER_24
++
++        PKG_CONFIG_EXE = $$pkgConfigExecutable()
++        system($${PKG_CONFIG_EXE} --atleast-version=0.24 $${poppler_qt_pkg}):DEFINES += HAS_POPPLER_24
+     }
+ } else {
+     DEFINES += NO_POPPLER_PREVIEW
