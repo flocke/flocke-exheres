@@ -1,9 +1,9 @@
 # Copyright 2014 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user='flocke' ] cmake [ api=2 cmake_minimum_version=2.8.8 ]
+require github [ user='flocke' ] cmake [ api=2 cmake_minimum_version=3.0.0 ]
 
-SUMMARY="A simple and minimalistic terminal emulator based on the VTE library."
+SUMMARY="A simple terminal emulator based on the VTE library."
 
 LICENCES="MIT"
 SLOT="0"
@@ -20,5 +20,8 @@ DEPENDENCIES="
 
 BUGS_TO="flocke@shadowice.org"
 
-CMAKE_SRC_CONFIGURE_PARAMS=( -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/${PNV} )
+CMAKE_SRC_CONFIGURE_PARAMS=(
+  -DWITH_TESTS=ON
+  -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/${PNV}
+)
 
