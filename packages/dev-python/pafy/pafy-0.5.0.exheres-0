@@ -1,6 +1,7 @@
 # Copyright 2014-2016 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
+require github [ user="mps-youtube" tag="v${PV}" ] setup-py [ has_bin=true import=setuptools test=nose ]
 require pafy
 
 PLATFORMS="~amd64"

@@ -3,6 +3,7 @@
 
 GITHUB_BRANCH="develop"
 
+require setup-py [ has_bin=true import=setuptools test=nose ] github [ user="mps-youtube" tag="v${PV}" ]
 require pafy
 
 PLATFORMS="~amd64"

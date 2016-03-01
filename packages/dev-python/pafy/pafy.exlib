@@ -1,8 +1,6 @@
 # Copyright 2014-2016 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require setup-py [ has_bin=true import=setuptools test=nose ] github [ user="mps-youtube" tag="v${PV}" ]
-
 SUMMARY="Python API to access metadata and content on YouTube"
 HOMEPAGE="http://np1.github.io/pafy"
 REMOTE_IDS="pypi:${PN}"
@@ -12,8 +10,8 @@ SLOT="0"
 MYOPTIONS=""
 
 DEPENDENCIES="
-    build+run:
-        net-misc/youtube-dl[python_abis:*(-)?]
+    recommendation:
+        net-misc/youtube-dl[python_abis:*(-)?] [[ description = [ Alternative to the internal backend for accessing YouTube, recommended by upstream ] ]]
 "
 
 BUGS_TO="flocke@shadowice.org"
