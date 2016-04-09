@@ -34,8 +34,6 @@
   - simple-mtpfs
 * x11-apps/
   - sterm
-* x11-themes/
-  - vertex-themes
 * x11-wm/
   - herbstluftwm
 
