@@ -1,0 +1,29 @@
+# Copyright 2016 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="Peak detection utilities for 1D data"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/numpy[>=1.8][python_abis:*(-)?]
+        dev-python/scipy[>=0.14][python_abis:*(-)?]
+
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+prepare_one_multibuild() {
+  default
+
+  # Add a file required for the tests from upsteam which was not
+  # included in the tarball for some reason (it is present in scm).
+  edo cp "${FILES}"/exp tests/exp
+}
+

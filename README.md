@@ -18,6 +18,7 @@
   - XML-FeedPP
   - XML-TreePP
 * dev-python/
+  - PeakUtils
   - gdata
   - h5py
   - pafy
