@@ -43,6 +43,7 @@ DEFAULT_SRC_PREPARE_PATCHES=(
     "${FILES}/texstudio-honor-datadir.patch"
     "${FILES}/texstudio-prefixed-pkg-config.patch"
     "${FILES}/texstudio-use-system-hunspell-quazip.patch"
+    "${FILES}/texstudio-fix-build.patch"
 )
 
 EQMAKE_PARAMS=(
