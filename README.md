@@ -29,8 +29,6 @@
   - mps-youtube
 * net-im/
   - profanity
-* net-misc/
-  - pyCardDAV
 * sys-fs/
   - simple-mtpfs
 * x11-apps/
