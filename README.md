@@ -24,7 +24,6 @@
   - pafy
   - pkgconfig
   - python-poppler-qt4
-  - vobject
 * media/
   - mps-youtube
 * net-im/
