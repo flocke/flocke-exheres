@@ -9,7 +9,7 @@
 * app-text/
   - krop
 * dev-libs/
-  - libstrophe
+  - libmesode
 * dev-perl/
   - Desktop-Notify
   - Net-IMAP-Client
