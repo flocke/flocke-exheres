@@ -17,7 +17,9 @@ MYOPTIONS="
 
 DEPENDENCIES="
     build+run:
+        dev-libs/expat
         dev-libs/glib:2
+        dev-libs/libmesode
         net-misc/curl
         sys-libs/ncurses
         libnotify? ( x11-libs/libnotify )
@@ -27,32 +29,6 @@ DEPENDENCIES="
     test:
         dev-util/cmocka
 "
-
-if ever is_scm; then
-    DEPENDENCIES+="
-        build+run:
-            dev-libs/expat
-            dev-libs/libmesode
-    "
-else
-    MYOPTIONS+="
-        providers: ( libxml2 expat ) [[ number-selected = exactly-one ]]
-    "
-
-    DEPENDENCIES+="
-        build+run:
-            providers:expat? (
-                dev-libs/expat
-                dev-libs/libstrophe[providers:expat]
-            )
-            providers:libxml2? (
-                dev-libs/libstrophe[providers:libxml2]
-                dev-libs/libxml2:2.0
-            )
-    "
-
-    DEFAULT_SRC_CONFIGURE_OPTIONS=( 'providers:libxml2 --with-libxml2' )
-fi
 
 BUGS_TO="flocke@shadowice.org"
 
