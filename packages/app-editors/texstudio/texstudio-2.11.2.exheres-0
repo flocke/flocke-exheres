@@ -37,7 +37,7 @@ DEPENDENCIES="
 "
 BUGS_TO="flocke@shadowice.org"
 
-WORK="${WORKBASE}/${PN}${PV}"
+WORK="${WORKBASE}"
 
 EQMAKE_PARAMS=(
   PREFIX="/usr/$(exhost --target)"
