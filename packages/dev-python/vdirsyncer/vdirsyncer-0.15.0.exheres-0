@@ -1,0 +1,35 @@
+# Copyright 2017 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools blacklist="2" has_bin=true multibuild=false ]
+
+SUMMARY="Synchronize CalDAV and CardDAV servers to your local machine"
+HOMEPAGE="https://github.com/pimutils/vdirsyncer/"
+
+UPSTREAM_DOCUMENTATION="https://vdirsyncer.pimutils.org/en/stable/"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-python/setuptools_scm[python_abis:*(-)?]
+    build+run:
+        dev-python/atomicwrites[>=0.1.7][python_abis:*(-)?]
+        dev-python/click-log[>=0.1.3][python_abis:*(-)?]
+        dev-python/click-threading[>=0.2][python_abis:*(-)?]
+        dev-python/click[>=5.0][python_abis:*(-)?]
+        dev-python/requests-toolbelt[>=0.4.0][python_abis:*(-)?]
+        dev-python/requests[>=2.4.1][python_abis:*(-)?]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+src_install() {
+    setup-py_src_install
+
+    dodoc "config.example"
+}
+
