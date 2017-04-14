@@ -1,0 +1,19 @@
+# Copyright 2014-2017 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="A python module for parsing and generating vCard and vCalendar files."
+
+LICENCES="Apache-2.0"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/python-dateutil[>=2.4.0][python_abis:*(-)?]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
