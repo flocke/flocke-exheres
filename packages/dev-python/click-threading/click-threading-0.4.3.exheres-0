@@ -1,0 +1,23 @@
+# Copyright 2017 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="Multithreaded Click apps made easy"
+HOMEPAGE="https://github.com/click-contrib/click-threading/"
+
+UPSTREAM_DOCUMENTATION="https://click-threading.readthedocs.io/en/latest/"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/click[python_abis:*(-)?]
+        python_abis:2.7? ( dev-python/futures[python_abis:2.7] )
+"
+
+BUGS_TO="flocke@shadowice.org"
+
