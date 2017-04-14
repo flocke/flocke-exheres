@@ -1,0 +1,22 @@
+# Copyright 2017 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="Simple and beautiful logging for click applications"
+HOMEPAGE="https://github.com/click-contrib/click-log/"
+
+UPSTREAM_DOCUMENTATION="https://click-log.readthedocs.io/en/stable/"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/click[python_abis:*(-)?]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
