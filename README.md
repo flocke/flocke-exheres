@@ -19,11 +19,17 @@
   - XML-TreePP
 * dev-python/
   - PeakUtils
+  - atomicwrites
+  - betamax
+  - click-log
+  - click-threading
   - gdata
   - h5py
   - pafy
   - pkgconfig
   - python-poppler-qt4
+  - requests-toolbelt
+  - vdirsyncer
 * media/
   - mps-youtube
 * net-im/
