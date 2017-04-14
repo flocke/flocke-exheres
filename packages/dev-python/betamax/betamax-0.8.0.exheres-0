@@ -1,0 +1,26 @@
+# Copyright 2017 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="A VCR imitation designed only for python-requests"
+HOMEPAGE="https://github.com/sigmavirus24/betamax/"
+
+UPSTREAM_DOCUMENTATION="https://betamax.readthedocs.io/en/latest/"
+
+LICENCES="Apache-2.0"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/requests[>=2.0][python_abis:*(-)?]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+# The tests want to connect to the internet, so they are
+# disabled.
+RESTRICT="test"
+
