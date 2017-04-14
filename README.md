@@ -6,6 +6,8 @@
 
 * app-editors/
   - texstudio
+* app-misc/
+  - khard
 * app-text/
   - krop
 * dev-libs/
@@ -30,6 +32,7 @@
   - python-poppler-qt4
   - requests-toolbelt
   - vdirsyncer
+  - vobject
 * media/
   - mps-youtube
 * net-im/
