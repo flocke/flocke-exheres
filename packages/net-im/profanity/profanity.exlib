@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 require github [ user="boothj5" ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 1.12 1.11 1.10 ] ]
+require python [ blacklist="3.1" with_opt=true multibuild=false ]
 
 SUMMARY="A console based XMPP client"
 HOMEPAGE="http://www.profanity.im"
@@ -32,6 +33,8 @@ DEPENDENCIES="
 
 BUGS_TO="flocke@shadowice.org"
 
-DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'libnotify notifications' 'otr' 'pgp' )
+DEFAULT_SRC_CONFIGURE_PARAMS=( '--enable-plugins' '--enable-c-plugins' )
+DEFAULT_SRC_CONFIGURE_OPTIONS=( "python PYTHON_VERSION=${PYTHON_ABIS}" )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'libnotify notifications' 'otr' 'pgp' 'python python-plugins' )
 DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( 'xscreensaver' )
 
