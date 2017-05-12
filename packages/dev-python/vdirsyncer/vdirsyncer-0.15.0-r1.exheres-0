@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 require pypi setup-py [ import=setuptools blacklist="2" has_bin=true multibuild=false ]
+require systemd-service
 
 SUMMARY="Synchronize CalDAV and CardDAV servers to your local machine"
 HOMEPAGE="https://github.com/pimutils/vdirsyncer/"
@@ -29,6 +30,8 @@ BUGS_TO="flocke@shadowice.org"
 
 src_install() {
     setup-py_src_install
+
+    systemd_files_doins "${SYSTEMDUSERUNITDIR}" "${FILES}"/systemd_user
 
     dodoc "config.example"
 }

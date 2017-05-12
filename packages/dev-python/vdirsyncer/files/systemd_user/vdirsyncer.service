@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync CardDAV and CalDAV accounts
+After=network.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/host/bin/vdirsyncer sync
+
+[Install]
+WantedBy=default.target

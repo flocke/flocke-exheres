@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync CardDAV and CalDAV accounts (hourly)
+
+[Timer]
+OnActiveSec=1s
+OnUnitActiveSec=1h
+
+[Install]
+WantedBy=timers.target
+
