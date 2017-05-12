@@ -1,0 +1,25 @@
+# Copyright 2016 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi setup-py [ import=setuptools ]
+
+SUMMARY="Python-PostgreSQL Database Adapter"
+HOMEPAGE="http://initd.org/psycopg/"
+
+UPSTREAM_DOCUMENTATION="http://initd.org/psycopg/docs/"
+
+LICENCES="LGPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-db/postgresql
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+# TODO: fix tests
+RESTRICT="test"
+

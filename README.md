@@ -29,6 +29,7 @@
   - h5py
   - pafy
   - pkgconfig
+  - psycopg2
   - python-poppler-qt4
   - requests-toolbelt
   - vdirsyncer
