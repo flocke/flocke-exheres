@@ -1,0 +1,42 @@
+# Copyright 2017 Jakob Nixdorf <flocke@shadowice.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="ReneVolution"  ] setup-py [ import=setuptools multibuild=false ]
+
+SUMMARY="A Python plugin to use (axolotl / Signal Protocol) encryption for the profanity XMPP messenger"
+
+LICENCES="GPL-3"
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-python/axolotl[>=0.1.7][python_abis:*(-)?]
+        dev-python/cryptography[>=1.1][python_abis:*(-)?]
+        dev-python/protobuf[>=3.0.0][python_abis:*(-)?]
+    run:
+        net-im/profanity[python][python_abis:*(-)?]
+"
+
+BUGS_TO="flocke@shadowice.org"
+
+src_prepare() {
+    setup-py_src_prepare
+
+    # Don't use the custom install command, we install
+    # everything manually
+    edo sed -i -e "/cmdclass={'install': CustomInstallCommand}/d" setup.py
+}
+
+src_install() {
+    setup-py_src_install
+
+    insinto "/usr/share/${PN}"
+    doins "deploy/prof_omemo_plugin.py"
+
+    elog "Since profanity does not (yet) support a global installation of plugins the plugin file"
+    elog "has been installed to /usr/share/profanity-omemo-plugin/prof_omemo_plugin.py."
+    elog "To enable it in your users profanity instance this file has to be manually linked to"
+    elog "~/.local/share/profanity/plugins/prof_omemo_plugin.py."
+}
+
