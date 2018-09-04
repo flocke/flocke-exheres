@@ -31,7 +31,6 @@
   - profanity-omemo-plugin
   - pkgconfig
   - python-poppler-qt4
-  - requests-toolbelt
   - vdirsyncer
   - vobject
 * media/
