@@ -22,7 +22,6 @@
 * dev-python/
   - PeakUtils
   - atomicwrites
-  - betamax
   - click-log
   - click-threading
   - gdata
