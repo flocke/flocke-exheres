@@ -22,7 +22,6 @@
 * dev-python/
   - PeakUtils
   - atomicwrites
-  - betamax
   - click-log
   - click-threading
   - gdata
@@ -31,7 +30,6 @@
   - profanity-omemo-plugin
   - pkgconfig
   - python-poppler-qt4
-  - requests-toolbelt
   - vdirsyncer
   - vobject
 * media/
