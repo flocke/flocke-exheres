@@ -1,7 +1,7 @@
 # Copyright 2014-2016 Jakob Nixdorf <flocke@shadowice.org>
 # Distributed under the terms of the GNU General Public License v2
 
-require setup-py [ blacklist="2 3.2" has_bin=true import=setuptools multibuild=false ] github [ user="mps-youtube" tag="v${PV}" ]
+require setup-py [ blacklist="2" has_bin=true import=setuptools multibuild=false ] github [ user="mps-youtube" tag="v${PV}" ]
 
 SUMMARY="Terminal based YouTube player and downloader"
 REMOTE_IDS="pypi:${PN}"
@@ -13,6 +13,10 @@ MYOPTIONS=""
 DEPENDENCIES="
     build+run:
         dev-python/pafy[>=0.4.3][python_abis:*(-)?]
+    recommendation:
+        dev-python/dbus-python[python_abis:*(-)?]
+        gnome-bindings/pygobject:3[python_abis:*(-)?]
+        net-misc/youtube-dl[python_abis:*(-)?]
     suggestion:
         media/mpv [[ description = [ Used for playback of the downloaded content (alternative to mplayer). ] ]]
         media/mplayer [[ description = [ Used for playback of the downloaded content (alternative to mpv). ] ]]
