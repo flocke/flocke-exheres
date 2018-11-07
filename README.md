@@ -6,8 +6,6 @@
 
 * app-editors/
   - texstudio
-* app-misc/
-  - khard
 * app-text/
   - krop
 * dev-libs/
@@ -21,19 +19,12 @@
   - XML-TreePP
 * dev-python/
   - PeakUtils
-  - atomicwrites
-  - click-log
-  - click-threading
   - gdata
   - h5py
   - pafy
   - profanity-omemo-plugin
   - pkgconfig
   - python-poppler-qt4
-  - vdirsyncer
-  - vobject
-* media/
-  - mps-youtube
 * net-im/
   - profanity
 * sys-fs/
