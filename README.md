@@ -6,8 +6,6 @@
 
 * app-editors/
   - texstudio
-* app-text/
-  - krop
 * dev-libs/
   - libmesode
 * dev-perl/
