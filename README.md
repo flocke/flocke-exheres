@@ -22,7 +22,6 @@
   - pafy
   - profanity-omemo-plugin
   - pkgconfig
-  - python-poppler-qt4
 * net-im/
   - profanity
 * sys-fs/
