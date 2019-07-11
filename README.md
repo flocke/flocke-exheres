@@ -6,8 +6,6 @@
 
 * app-editors/
   - texstudio
-* app-text/
-  - krop
 * dev-libs/
   - libmesode
 * dev-perl/
@@ -24,7 +22,6 @@
   - pafy
   - profanity-omemo-plugin
   - pkgconfig
-  - python-poppler-qt4
 * net-im/
   - profanity
 * sys-fs/
